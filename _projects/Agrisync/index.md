@@ -11,7 +11,7 @@ skills:
   - Technical leadership in an agile team
   - Market research & business planning
 
-main-image: /agrisync cover.jpg
+main-image: /agrisyncOverview.png
 ---
 
 ---
