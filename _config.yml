@@ -7,31 +7,32 @@
 
 # Main Page Setup
 
-title: John Doe's Portfolio # This is what shows up in the tab of the browser
+title: Daniel Nguyen's Portfolio # This is what shows up in the tab of the browser
 
 
 
 # Hero Section
-name: John Doe
-headline: headline message
+name: Daniel Nguyen
+headline: Engineering embedded hardware that bridges concept to commercialization.
 description: >- # dont remove this line. this will ignore all new lines until the next section
-  Write an awesome intro and discuss your highlights and qualification. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Electrical Engineer with hands-on experience in embedded systems, analog circuit design, and rapid prototyping. 
+  I've led hardware development for IoT and sensor platforms, from custom PCB design to BLE firmware integration. 
+  I am skilled in Altium, LTspice, and lab validation tools. 
+  I build functional, testable prototypes that bridge ideas and manufacturable solutions.
 
 # Place your profile image in /assets/images/profile-image/folder and edit the file name
-profile_image: ./assets/images/profile-image/avatar.jpeg
+profile_image: ./assets/images/profile-image/avatar.jpg
 
 
 # Link your resume
 # You can place your resume in assets/resume/{resume file.pdf} or add external link such as pdf saved in google drive 
-resume-url: https://drive.google.com/file/d/13Z3duVzh-gguPU5r03oJVEE6rV9rd3DS/view?usp=sharing
+resume-url: https://drive.google.com/file/d/1Gms9vXSEYP-JqIYeios82awlaYdhdwcd/view?usp=sharing
 
 
 # Set up external links - this will show up as small icons next to your name.
 
 external-links:    # input only your own url slug. The icons with missing entries will not appear.
-  linkedin: test    # https://www.linkedin.com/in/{your url slug} 
+  linkedin: test    # https://www.linkedin.com/in/daniel-nguyen-017942239/ 
   github: leea12    # https://github.com/{your url slug} 
   stackoverflow: test      # https://stackoverflow.com/users/{your url slug}
   medium:            # https://medium.com/@{your url slug} 
