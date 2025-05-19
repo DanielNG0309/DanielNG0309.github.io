@@ -51,7 +51,7 @@ skills:
     - Altium
     - KiCad
     - LTSpice
-   - category: Embedded Systems
+  - category: Embedded Systems
     tools:
     - Zephyr RTOS
     - Embedded C
