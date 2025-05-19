@@ -5,11 +5,9 @@ description:  A start-up style capstone project developing a Bluetooth-enabled I
 skills: 
   - PCB design(Altium)
   - Analog front-end design
-  - Embedded C
+  - BLE
   - Zephyr RTOS
   - Rapid prototyping & testing
-  - Circuit Validation
-  - Technical leadership
   - Market research & business planning
 
 main-image: /agrisyncOverview.png
