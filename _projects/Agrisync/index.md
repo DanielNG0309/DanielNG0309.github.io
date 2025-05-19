@@ -9,6 +9,7 @@ skills:
   - Zephyr RTOS (Embedded C)
   - Rapid prototyping & testing
   - Market research & business planning
+  - Technical Leadership
 
 main-image: /agrisyncOverview.png
 ---
