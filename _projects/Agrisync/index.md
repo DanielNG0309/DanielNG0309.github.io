@@ -1,18 +1,17 @@
 ---
 layout: post
-title: Super Heavy Booster Catch (Demo Only)
-description:  (I have never been employed by / affiliated with SpaceX. This is for demo use only) 
-    Developing the Super Heavy booster catch project involves designing a robust launch tower with "chopstick" arms, advanced control systems for precise booster alignment, and integrating sophisticated software for real-time trajectory adjustments and structural engineering to handle immense forces.
+title: Agrisync - IoT Inventory Management System
+description:  A start-up style capstone project developing a Bluetooth-enabled IoT system for real-time monitoring of agricultural inventory. I led the hardware team, designing the custom PCB, analog front-end, and embedded firmware using Zephyr RTOS on an nRF52833 SoC. The project also involved business model development, customer discovery, and market validation, simulating a full product development cycle from concept to launch.
 skills: 
-  - Structural analysis
-  - Aerodynamic design
-  - Propulsion system integration
-  - Control Algorithem 
-  - Welding
-  - Metal forming
-  - Thermal simulation
+  - PCB design and layout (Altium)
+  - Analog front-end design
+  - Embedded C development on Zephyr RTOS
+  - Rapid prototyping & testing
+  - Circuit Validation with bench tools
+  - Technical leadership in an agile team
+  - Market research & business planning
 
-main-image: /project2.jpg
+main-image: /agrisync cover.jpg
 ---
 
 ---
