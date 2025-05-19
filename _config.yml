@@ -15,10 +15,9 @@ title: Daniel Nguyen's Portfolio # This is what shows up in the tab of the brows
 name: Daniel Nguyen
 headline: Engineering embedded hardware that bridges concept to commercialization.
 description: >- # dont remove this line. this will ignore all new lines until the next section
-  Electrical Engineer with hands-on experience in embedded systems, analog circuit design, and rapid prototyping. 
-  I've led hardware development for IoT and sensor platforms, from custom PCB design to BLE firmware integration. 
-  I am skilled in Altium, LTspice, and lab validation tools. 
-  I build functional, testable prototypes that bridge ideas and manufacturable solutions.
+  Product development EIT with hands-on experience in mixed-signal circuit design, embedded integration, and rapid prototyping. 
+  Skilled in PCB layout, analog front-end design, and firmware-hardware interfacing, with a strong grasp of the product development cycle from concept through validation. 
+  I bring a build-test-refine mindset, adaptability across platforms and tools, and a track record of contributing to high-impact, multidisciplinary teams.
 
 # Place your profile image in /assets/images/profile-image/folder and edit the file name
 profile_image: ./assets/images/profile-image/avatar.jpg
@@ -55,7 +54,7 @@ skills:
     tools:
     - Zephyr RTOS
     - Embedded C
-    - I2C, SPI, UART
+    - I2C/SPI/UART
     - BLE (Bluetooth Low Energy)
     - Nordic SDK
     - GPIO/ADC driver development
@@ -81,7 +80,7 @@ skills:
     - Git
   - category: Standards & Design Practices
     tools:
-    - CEC, IEEE, IEC familiarity
+    - CEC/IEEE/IEC familiarity
     - DFM (Design for Manufacturing)
     - EMC and ESD considerations
 
