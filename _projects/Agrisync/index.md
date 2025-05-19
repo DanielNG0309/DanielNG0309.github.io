@@ -5,8 +5,8 @@ description:  A start-up style capstone project developing a Bluetooth-enabled I
 skills: 
   - PCB design(Altium)
   - Analog front-end design
-  - BLE
-  - Zephyr RTOS
+  - BLE Configuration
+  - Zephyr RTOS (Embedded C)
   - Rapid prototyping & testing
   - Market research & business planning
 
