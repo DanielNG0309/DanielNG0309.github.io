@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Agrisync - IoT Inventory Management System
-description:  A start-up style capstone project developing a Bluetooth-enabled IoT system for real-time monitoring of agricultural inventory. I led the hardware team, designing the custom PCB, analog front-end, and embedded firmware using Zephyr RTOS on an nRF52833 SoC. The project also involved business model development, customer discovery, and market validation, simulating a full product development cycle from concept to launch.
+description:  A start-up style capstone project developing a BLE-enabled IoT system for real-time monitoring of agricultural inventory. I led the hardware team, designing the custom PCB, analog front-end, and embedded firmware using Zephyr RTOS on an nRF52833 SoC. The project also involved business model development, customer discovery, and market validation, simulating a full product development cycle from concept to launch.
 skills: 
   - PCB design(Altium)
   - Analog front-end design
