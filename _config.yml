@@ -32,9 +32,9 @@ resume-url: https://drive.google.com/file/d/1Gms9vXSEYP-JqIYeios82awlaYdhdwcd/vi
 # Set up external links - this will show up as small icons next to your name.
 
 external-links:    # input only your own url slug. The icons with missing entries will not appear.
-  linkedin: test    # https://www.linkedin.com/in/daniel-nguyen-017942239/ 
-  github: leea12    # https://github.com/{your url slug} 
-  stackoverflow: test      # https://stackoverflow.com/users/{your url slug}
+  linkedin: https://www.linkedin.com/in/daniel-nguyen-017942239/    # https://www.linkedin.com/in/daniel-nguyen-017942239/ 
+  github:     # https://github.com/{your url slug} 
+  stackoverflow:       # https://stackoverflow.com/users/{your url slug}
   medium:            # https://medium.com/@{your url slug} 
   x-twitter:   # https://x.com/{your url slug} 
   threads:            # https://threads.net/@{your url slug} 
@@ -46,46 +46,44 @@ external-links:    # input only your own url slug. The icons with missing entrie
 
 # Skills Section - Add the list of your Skills by categories/tools. The indentation for each level needs to be precise. 
 skills:
-  - category: 3D Modeling
+  - category: Circuit Design
     tools:
-    - Onshape
-    - Solidworks
-    - Creo
-    - Fusion 360 (Autodesk)
-    - Blender (for complex shapes or animations)
-    - Siemens NX
-    - Inventor (Autodesk)
-    - CATIA (Dassault Systèmes)
-  - category: Prototyping
-    tools:
-    - SLA
-    - CNC
-    - FDM
-    - SLS
-    - DMLS
-    - PolyJet Printing
-    - Vacuum Casting
-    - Laser Cutting
-    - Water Jet Cutting
-    - Arduino / Raspberry Pi
-    - Breadboarding for circuit testing
-  - category: Design Standards / Practices
-    tools:
-    - GD&T ASME Y14
-    - ISO fits and tolerances
-    - PLM (PTC Windchill / Arena)   
-  - category: PCB Design
-    tools:
-    - Altium Designer
     - Altium
-    - Eagle 
     - KiCad
-  - category: Problem Solving / Risk Management
+    - LTSpice
+   - category: Embedded Systems
     tools:
-    - Root Cause Analysis (e.g., 5 Whys, Fishbone Diagram)
-    - DFMEA / PFMEA 
-    - Six Sigma methodologies
-    - Shain Red-X
+    - Zephyr RTOS
+    - Embedded C
+    - I2C / SPI / UART
+    - BLE (Bluetooth Low Energy)
+    - Nordic SDK
+    - GPIO/ADC driver development
+  - category: Prototyping & Debug
+    tools:
+    - Breadboarding
+    - Reflow soldering
+    - Oscilloscopes
+    - Logic Analyzers
+    - Multimeters
+    - JTAG Debugging
+  - category: Test & Validation
+    tools:
+    - Signal probing and characterization
+    - Performance testing (gain, offset, noise)
+    - FMEA
+    - Functional hardware bring-up
+  - category: Software & Scripting
+    tools:
+    - Python
+    - MATLAB
+    - PowerShell
+    - Git
+  - category: Standards & Design Practices
+    tools:
+    - CEC / IEEE / IEC familiarity
+    - DFM (Design for Manufacturing)
+    - EMC/ESD considerations
 
 
 # Contact Form Setup. Setup an account and copy over the key. When someone fills out the form, it will be received in your email.
