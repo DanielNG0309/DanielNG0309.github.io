@@ -15,8 +15,33 @@ main-image: /agrisyncOverview.png
 ---
 
 
-## Problem & Concept
+## 1. Problem & Concept
 Traditional farm inventory methods (e.g., livestock feed, crop bins) are manual and error-prone, often relying on visual estimation. AgriSync aims to provide real-time, scalable, and wireless tracking of physical goods using load-sensing and BLE connectivity.
+
+## 2. Hardware Design
+
+### a. PCB design
+
+{% include image-gallery.html images="pcb schem.png" height="400" %} 
+
+The custom PCB for the AgriSync Smart Scale was designed in Altium and fabricated through JLCPCB, with PCB Assembly (PCBA) services utilized for the majority of surface-mounted components to ensure reliable assembly quality and to accelerate the prototyping process.
+
+
+This was a two-layer PCB, measuring approximately 140 mm by 70 mm. Given that the final installation does not impose size constraints, a larger footprint was chosen to simplify routing and allow clear silkscreen labeling for debugging and assembly.
+
+
+To support current demands on power lines and reduce resistive losses, main power traces were routed using 0.7 mm to 1.0 mm widths, with geometric power planes implemented where feasible. Signal and low-current digital traces were routed using 0.254 mm width, which provided a safe clearance margin while accommodating the dense pad spacing of the MCU, whose pads measure just 0.4 mm x 0.4 mm with 0.2 mm spacing between them. To ensure signal integrity and facilitate grounding across the board, ground polygon pours were included on both layers, ensuring a unified and low-impedance ground reference throughout the circuit.
+
+
+The PCB primarily features surface-mount devices (SMDs), including the Nordic BLE module, ADCs, resistors, capacitors, voltage regulator, and instrumentation amplifiers. Through-hole components were limited to the 12V DC barrel jack input, an LED 7-segment display, and four unpopulated potentiometer footprints intended for optional tuning of amplifier gains. A custom library was made for the project, which includes all components and footprints, following the industry standard of having a dedicated library for a PCB project.
+
+{% include image-gallery.html images="PCB routing.jpg" height="400" %} 
+
+### b. Load cell
+
+### c. In-Amp
+
+
 ### Header 3 
 Use this to have subsection if needed
 
