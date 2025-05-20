@@ -17,9 +17,9 @@ main-image: /agrisyncOverview.png
 ---
 ## 1. Problem & Concept
 Traditional farm inventory methods (e.g., livestock feed, crop bins) are manual and error-prone, often relying on visual estimation. AgriSync aims to provide real-time, scalable, and wireless tracking of physical goods using load-sensing and BLE connectivity.
----
 
 ---
+
 ## 2. Hardware Design
 
 
@@ -130,7 +130,6 @@ The system includes a **single-digit 7-segment display** used for scale identifi
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Debugging Aid**: Provided real-time feedback during development and testing, such as status codes and sensor activity indicators.
----
 
 ---
 ## 3. Firmware & Embedded Systems
