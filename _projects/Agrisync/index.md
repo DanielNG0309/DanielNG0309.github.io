@@ -20,7 +20,9 @@ Traditional farm inventory methods (e.g., livestock feed, crop bins) are manual 
 
 ## 2. Hardware Design
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***a. PCB design***
+
+### ***a. PCB design***
+
 
 {% include image-gallery.html images="pcb schem.png" height="400" %} 
 
@@ -39,7 +41,8 @@ The PCB primarily features **surface-mount devices** (SMDs), including the **Nor
 {% include image-gallery.html images="PCB routing.jpg" height="400" %} 
 
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***b. Load cell***
+### ***b. Load cell***
+
 
 The AgriSync system uses four **1000 kg** load cells to measure weight, chosen for their durability and precision in harsh agricultural environments. Key specifications:
 
@@ -53,7 +56,9 @@ The AgriSync system uses four **1000 kg** load cells to measure weight, chosen f
 
 With a **12V excitation**, the theoretical maximum output from each load cell is approximately **24 mV** (2 mV/V × 12 V). The actual sensitivity tested is about **1.2 mV/W** which would convert to a maximum of **14.4 mV**, requiring **amplification** before analog-to-digital conversion.
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***c. In-Amp***
+
+### ***c. In-Amp***
+
 
 An **INA826** instrumentation amplifier is used for each load cell to amplify the weak differential signal. With a **gain resistor** set to **250 Ω**, each amplifier achieves a gain of approximately **250x**, bringing the signal into a readable range for the ADC. Key reasons for this selection include:
 
@@ -65,7 +70,9 @@ An **INA826** instrumentation amplifier is used for each load cell to amplify th
 
 Each load cell has a dedicated **INA826** amplifier to ensure **isolated** and **accurate signal conditioning**. 
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***d. Analog to Digital Converter*** 
+
+### ***d. Analog to Digital Converter*** 
+
 
 The amplified analog signals are fed into two NAU7802 24-bit ADCs. Each ADC supports two channels, enabling it to process signals from two load cells. The reasons for choosing the NAU7802 include:
 
@@ -75,7 +82,9 @@ The amplified analog signals are fed into two NAU7802 24-bit ADCs. Each ADC supp
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **I²C** communication, simplifying integration with the BLE controller module.
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***e. BLE Controller Module***
+
+### ***e. BLE Controller Module***
+
 
 The system uses the **BL653u** module featuring the **Nordic nRF52833 SoC**, a **Bluetooth 5.1**-enabled microcontroller. Nordic was selected for its strong track record in **BLE** performance and its **robust development ecosystem**. Key benefits include:
 
@@ -88,13 +97,21 @@ The system uses the **BL653u** module featuring the **Nordic nRF52833 SoC**, a *
 
 The controller handles all **BLE communication** with a **mobile application**, enabling **real-time** transmission of load cell data to the user interface. 
 
+
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***f. Power Supply***
 
-A dual-rail power supply configuration powers the AgriSync system:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Primary Supply: 12V DC input derived from standard AC sources (100–240V, 50/60 Hz), making it compatible with global power standards, including Canada’s 120V/60Hz and Brazil’s 127V or 220V/60Hz. This rail powers the load cells and INA826 instrumentation amplifiers.
+A **dual-rail** power supply configuration powers the AgriSync system:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3V Regulated Rail: A L78L33ABUTR linear voltage regulator steps down 12V to 3.3V to power the controller and other low-voltage digital components. This rail powers the BL653u module and NAU7802 ADCs.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Primary Supply**: **12V DC** input derived from standard AC sources **(100–240V, 50/60 Hz)**, making it compatible with global power 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;standards, including **Canada’s 120V/60Hz** and **Brazil’s 127V** or **220V/60Hz**. This rail powers the **load cells** and **INA826** 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instrumentation amplifiers.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **3.3V Regulated Rail**: A **L78L33ABUTR** linear voltage regulator steps down **12V** to **3.3V** to power the controller and other low-voltage digital 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components. This rail powers the **BL653u** module and **NAU7802** ADCs.
 
 
 ## Embedding images 
