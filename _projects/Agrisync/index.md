@@ -130,9 +130,139 @@ The **nrf52833** chip utilizes **Zephyr RTOS** as its main development tool. So,
 
 A **GATT service** was set up to handle **BLE communication** between the **scale** and the **mobile app** with **2 characteristics**, one dedicated to weight change information and one for other communications needs (data integrity check, commands, etc,...). Connection and advertising parameters were set to a **minimum interval** of **50 ms** and a **maximum interval** of **100 ms**. **MTU** (Maximum Transmission Unit) was also set to the max of **247 bytes** instead of the default **23 bytes**. These changes ensure fast and seamless connection and data transfer between the scale and mobile app.
 
+```c
+BT_GATT_SERVICE_DEFINE(
+	 my_agrisync_svc, 
+	 BT_GATT_PRIMARY_SERVICE(BT_UUID_AGRISYNC_SERV),
+	 // Weight update characteristic (notify only)
+	 BT_GATT_CHARACTERISTIC(BT_UUID_WEIGHT_UPDATE_CHRC, BT_GATT_CHRC_NOTIFY, BT_GATT_PERM_NONE, NULL, NULL, NULL),
+	 BT_GATT_CCC(weight_update_cfg_changed, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
+	 // Control characteristic for everything else (write and notify)
+	 BT_GATT_CHARACTERISTIC(BT_UUID_INFO_EXCHANGE_CHRC, BT_GATT_CHRC_WRITE | BT_GATT_CHRC_NOTIFY, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE, NULL, combined_write, NULL),
+	 BT_GATT_CCC(info_exchange_cfg_changed, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE)
+ );
+```
+
+```c
+CONFIG_BT_L2CAP_TX_MTU=247
+CONFIG_BT_BUF_ACL_RX_SIZE=251
+```
+
+```c
+static const struct bt_le_adv_param *adv_param = BT_LE_ADV_PARAM((BT_LE_ADV_OPT_CONNECTABLE | BT_LE_ADV_OPT_USE_IDENTITY), 50,100,NULL);
+```
+
+```c
+static const struct bt_le_conn_param *conn_param = BT_LE_CONN_PARAM(50, 100, 0, 1000);
+```
+
 A **state machine** configuration was used to gather the data from the 2 **ADCs** and 4 **load cells**. The **first state** is to **wait for the data to be ready** and read from load cells **1** and **3** (both connected to the internal MUX line 1 of each of the 2 ADCs). When both load cells **1** and **3** have been **read**, **MUX line 2** will be **selected**, and a predetermined **wait time** (400 ms) will be implemented for the **MUXs to settle**. Data will be then read from load cells **2** and **4** (both connected to MUX line 2) when it is **ready**. Once all **4 load cells are read**, the **sum** of them will be sent back to the main loop, **MUX line 1** will be selected, and the system will wait for another **400 ms**.
 
+```c
+uint64_t adc_data_process(state_t *state, const struct i2c_dt_spec *dev_i2c1, const struct i2c_dt_spec *dev_i2c2) {
+	static bool ready_1 = false, ready_2 = false, ready_3 = false, ready_4 = false;
+	uint64_t adc_total = 0;
+	uint8_t ADC_val[3];  
+ 
+	switch (*state) {
+		 case READ_LOAD_CELL_1_3:
+			if (adc1_ready && !ready_1) {
+				i2c_burst_read_dt(dev_i2c1, NAU7802_ADCO_B2, ADC_val, sizeof(ADC_val));
+				load_cell_1 = ADC_val[0] * 256 * 256 + ADC_val[1] * 256 + ADC_val[2];
+				ready_1 = true;
+				
+			}
+			if (adc2_ready && !ready_3) {
+				i2c_burst_read_dt(dev_i2c2, NAU7802_ADCO_B2, ADC_val, sizeof(ADC_val));
+				load_cell_3 = ADC_val[0] * 256 * 256 + ADC_val[1] * 256 + ADC_val[2];
+				ready_3 = true;
+			}
+			if (ready_1 && ready_3) {
+				*state = SWITCH_TO_MUX_2;
+			}
+			break;
+ 
+		case SWITCH_TO_MUX_2:
+			i2c_reg_write_byte_dt(dev_i2c1, NAU7802_CTRL2, 0x80);
+			i2c_reg_write_byte_dt(dev_i2c2, NAU7802_CTRL2, 0x80);
+			k_msleep(400);
+			*state = READ_LOAD_CELL_2_4;
+			break;
+ 
+		case READ_LOAD_CELL_2_4:
+			if (adc1_ready && !ready_2) {
+				i2c_burst_read_dt(dev_i2c1, NAU7802_ADCO_B2, ADC_val, sizeof(ADC_val));
+				load_cell_2 = ADC_val[0] * 256 * 256 + ADC_val[1] * 256 + ADC_val[2];
+				ready_2 = true;
+			}
+			if (adc2_ready && !ready_4) {
+				i2c_burst_read_dt(dev_i2c2, NAU7802_ADCO_B2, ADC_val, sizeof(ADC_val));
+				load_cell_4 = ADC_val[0] * 256 * 256 + ADC_val[1] * 256 + ADC_val[2];
+				ready_4 = true;
+			}
+			if (ready_2 && ready_4) {
+				*state = RETURN_DATA;
+			}
+			break;
+ 
+		case SWITCH_TO_MUX_1:
+			i2c_reg_write_byte_dt(dev_i2c1, NAU7802_CTRL2, 0x00);
+			i2c_reg_write_byte_dt(dev_i2c2, NAU7802_CTRL2, 0x00);
+			k_msleep(400);
+			*state = READ_LOAD_CELL_1_3;
+			break;
+ 
+		case RETURN_DATA:
+			if (ready_1 && ready_2 && ready_3 && ready_4) {
+				adc_total = load_cell_1 + load_cell_2 + load_cell_3 + load_cell_4;
+				ready_1 = ready_2 = ready_3 = ready_4 = false;  // Reset flags
+				*state = SWITCH_TO_MUX_1;  // Restart state machine
+				return adc_total;
+			}
+			break;
+	}
+ 
+	return 0;  // Default return if no data is ready
+}
+```
+
 To **smooth out the data**, multiple options were considered including **leaky integrator, moving average, and Kalman filter**. The **moving average** method was chosen at the end because of its **ease of implementation**, **decent performance**, and relatively **less resource-intensive** requirement. Raw data coming from the state machine was stored in a **cyclical buffer** continuously with **6 entries**. The **sum of the data** was then **averaged out**, giving a smooth and stable output. **Thresholds** in both **values** and **time** were also implemented to **ignore small and momentary changes** 
+
+```c
+weight_buff_sum +=data_kg;
+			weight_buff_sum -=raw_data_buff[(raw_data_index)%MOV_AVG_SIZE];
+			raw_data_buff[raw_data_index%MOV_AVG_SIZE] = data_kg;
+			raw_data_index++;
+			moving_avg = weight_buff_sum/MOV_AVG_SIZE;
+			data_kg_current = moving_avg;
+			diff = fabsf(data_kg_current - data_kg_prev);
+			
+			
+			if(diff>big_threshold){
+				stable_cycle = 0;
+				data_kg_prev = data_kg_current;
+				big_change = true;
+				
+			}
+			if(diff<small_threshold&&big_change&&(fabsf(data_kg_current-last_weight_saved)>=small_threshold)){
+				stable_cycle++;
+			}
+			else{
+				stable_cycle = 0;
+			}	
+			// Only store the moving average if the change is significant and sustained
+			if (stable_cycle >= hold_cycle) {
+				weight_buff[data_index] = moving_avg;  // Store the filtered moving average
+				last_weight_saved = weight_buff[data_index];
+				time_buff[data_index] = k_uptime_seconds();
+				stable_cycle = 0;
+				big_change = false;
+				data_index++;
+			}
+			if(data_index>=MAX_ENTRIES){
+				data_index = 0;
+			}
+```
 
 
 
