@@ -20,7 +20,7 @@ Traditional farm inventory methods (e.g., livestock feed, crop bins) are manual 
 
 ## 2. Hardware Design
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **a. PCB design**
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***a. PCB design***
 
 {% include image-gallery.html images="pcb schem.png" height="400" %} 
 
@@ -39,7 +39,7 @@ The PCB primarily features **surface-mount devices** (SMDs), including the **Nor
 {% include image-gallery.html images="PCB routing.jpg" height="400" %} 
 
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **b. Load cell**
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***b. Load cell***
 
 The AgriSync system uses four **1000 kg** load cells to measure weight, chosen for their durability and precision in harsh agricultural environments. Key specifications:
 
@@ -53,7 +53,7 @@ The AgriSync system uses four **1000 kg** load cells to measure weight, chosen f
 
 With a **12V excitation**, the theoretical maximum output from each load cell is approximately **24 mV** (2 mV/V × 12 V). The actual sensitivity tested is about **1.2 mV/W** which would convert to a maximum of **14.4 mV**, requiring **amplification** before analog-to-digital conversion.
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **c. In-Amp**
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***c. In-Amp***
 
 An **INA826** instrumentation amplifier is used for each load cell to amplify the weak differential signal. With a **gain resistor** set to **250 Ω**, each amplifier achieves a gain of approximately **250x**, bringing the signal into a readable range for the ADC. Key reasons for this selection include:
 
@@ -65,7 +65,7 @@ An **INA826** instrumentation amplifier is used for each load cell to amplify th
 
 Each load cell has a dedicated **INA826** amplifier to ensure **isolated** and **accurate signal conditioning**. 
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Analog to Digital Converter** 
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***d. Analog to Digital Converter*** 
 
 The amplified analog signals are fed into two NAU7802 24-bit ADCs. Each ADC supports two channels, enabling it to process signals from two load cells. The reasons for choosing the NAU7802 include:
 
@@ -75,6 +75,18 @@ The amplified analog signals are fed into two NAU7802 24-bit ADCs. Each ADC supp
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **I²C** communication, simplifying integration with the BLE controller module.
 
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***e. BLE Controller Module***
+
+The system uses the **BL653u** module featuring the **Nordic nRF52833 SoC**, a **Bluetooth 5.1**-enabled microcontroller. Nordic was selected for its strong track record in **BLE** performance and its **robust development ecosystem**. Key benefits include:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Integrated **BLE stack** with support for **custom GATT services**, enabling structured communication with external devices.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reliable **BLE connectivity** with long-range support and stable performance, well-suited for unpredictable farm environments.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Extensive **development tools** and **community support**, simplifying firmware development and debugging.
+
+
+The controller handles all **BLE communication** with a **mobile application**, enabling **real-time** transmission of load cell data to the user interface. 
 
 
 ## Embedding images 
