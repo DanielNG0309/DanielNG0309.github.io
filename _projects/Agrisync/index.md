@@ -287,5 +287,28 @@ weight_buff_sum +=data_kg;
 ```
 ---
 
+## 4. Rapid Prototyping & Validation
+
+{% include image-gallery.html images="prototype.png" height="400" %} 
+
+Built a discrete **prototype** using op-amps and breakout ADCs while waiting for PCB production
+
+**Prototyped** strain gauge circuits on **breadboard** and validated with **oscilloscopes** and **logic analyzers**
+
+Performed **bench tests** simulating load conditions to verify amplifier gain and signal integrity
+
+**Debugged** BLE interactions and power stability with J-Link and RTT logging
+
+---
+
+## 5. Business & Startup
+
+{% include image-gallery.html images="medal.jpg" height="400" %} 
+
+Contributed to **market research** and **user interviews** to define value proposition
+
+Collaborated on **business model** canvas, **pitch deck**, and **stakeholder demo**
+
+Helped prepare project for capstone competition, earning a **bronze medal**
 
 
