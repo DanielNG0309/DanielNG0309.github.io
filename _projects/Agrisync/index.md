@@ -20,9 +20,10 @@ Traditional farm inventory methods (e.g., livestock feed, crop bins) are manual 
 
 ## 2. Hardware Design
 
-### a. PCB design
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;### a. PCB design
 
 {% include image-gallery.html images="pcb schem.png" height="400" %} 
+
 
 The custom PCB for the AgriSync Smart Scale was designed in Altium and fabricated through JLCPCB, with PCB Assembly (PCBA) services utilized for the majority of surface-mounted components to ensure reliable assembly quality and to accelerate the prototyping process.
 
@@ -37,9 +38,11 @@ The PCB primarily features surface-mount devices (SMDs), including the Nordic BL
 
 {% include image-gallery.html images="PCB routing.jpg" height="400" %} 
 
-### b. Load cell
 
-### c. In-Amp
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;### b. Load cell
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;### c. In-Amp
 
 
 ### Header 3 
