@@ -39,10 +39,21 @@ The PCB primarily features surface-mount devices (SMDs), including the Nordic BL
 {% include image-gallery.html images="PCB routing.jpg" height="400" %} 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;### b. Load cell
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Load cell
 
+The AgriSync system uses four 1000 kg load cells to measure weight, chosen for their durability and precision in harsh agricultural environments. Key specifications:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;### c. In-Amp
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rated Output: 2.0 ± 0.004 mV/V
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Excitation Voltage: 10V nominal (maximum 15V AC/DC)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Operating Temperature: -30°C to +65°C — suitable for outdoor farm environments
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Environmental Protection: IP67 — dust-tight and water-resistant for rugged field use
+
+With a 12V excitation, the theoretical maximum output from each load cell is approximately 24 mV (2 mV/V × 12 V). The actual sensitivity tested is about 1.2 mV/W which would convert to a maximum of 14.4 mV, requiring amplification before analog-to-digital conversion.
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. In-Amp
 
 
 ### Header 3 
