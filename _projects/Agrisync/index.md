@@ -43,6 +43,7 @@ The PCB primarily features **surface-mount devices** (SMDs), including the **Nor
 
 ### ***b. Load cell***
 
+{% include image-gallery.html images="Load cells.png" height="400" %} 
 
 The AgriSync system uses four **1000 kg** load cells to measure weight, chosen for their durability and precision in harsh agricultural environments. Key specifications:
 
@@ -59,6 +60,7 @@ With a **12V excitation**, the theoretical maximum output from each load cell is
 
 ### ***c. In-Amp***
 
+{% include image-gallery.html images="inamp.png" height="400" %} 
 
 An **INA826** instrumentation amplifier is used for each load cell to amplify the weak differential signal. With a **gain resistor** set to **250 Ω**, each amplifier achieves a gain of approximately **250x**, bringing the signal into a readable range for the ADC. Key reasons for this selection include:
 
@@ -73,6 +75,7 @@ Each load cell has a dedicated **INA826** amplifier to ensure **isolated** and *
 
 ### ***d. Analog to Digital Converter*** 
 
+{% include image-gallery.html images="ADC.png" height="400" %} 
 
 The amplified analog signals are fed into two NAU7802 24-bit ADCs. Each ADC supports two channels, enabling it to process signals from two load cells. The reasons for choosing the NAU7802 include:
 
@@ -85,6 +88,7 @@ The amplified analog signals are fed into two NAU7802 24-bit ADCs. Each ADC supp
 
 ### ***e. BLE Controller Module***
 
+{% include image-gallery.html images="MCU.png" height="400" %} 
 
 The system uses the **BL653u** module featuring the **Nordic nRF52833 SoC**, a **Bluetooth 5.1**-enabled microcontroller. Nordic was selected for its strong track record in **BLE** performance and its **robust development ecosystem**. Key benefits include:
 
@@ -100,6 +104,7 @@ The controller handles all **BLE communication** with a **mobile application**, 
 
 ### ***f. Power Supply***
 
+{% include image-gallery.html images="power supply.png" height="400" %} 
 
 A **dual-rail** power supply configuration powers the AgriSync system:
 
