@@ -14,11 +14,9 @@ skills:
 main-image: /agrisyncOverview.png
 ---
 
----
-# Header 1 
-Used for the title (already generated automatically at the top)
-## Header 2  
-Use this for the header of each section
+
+## Problem & Concept
+Traditional farm inventory methods (e.g., livestock feed, crop bins) are manual and error-prone, often relying on visual estimation. AgriSync aims to provide real-time, scalable, and wireless tracking of physical goods using load-sensing and BLE connectivity.
 ### Header 3 
 Use this to have subsection if needed
 
