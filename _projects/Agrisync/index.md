@@ -57,7 +57,7 @@ With a **12V excitation**, the theoretical maximum output from each load cell is
 
 An **INA826** instrumentation amplifier is used for each load cell to amplify the weak differential signal. With a **gain resistor** set to **250 Ω**, each amplifier achieves a gain of approximately **250x**, bringing the signal into a readable range for the ADC. Key reasons for this selection include:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; High **Common-Mode Rejection Ratio** (CMRR) – essential for eliminating noise such as the 6V common mode voltage present in the load cell outputs.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; High **Common-Mode Rejection Ratio** (CMRR) – essential for eliminating the 6V common mode voltage in the load cell outputs.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wide **supply voltage** range (>15V), compatible with the 12V rail used in the system.
 
@@ -65,8 +65,16 @@ An **INA826** instrumentation amplifier is used for each load cell to amplify th
 
 Each load cell has a dedicated **INA826** amplifier to ensure **isolated** and **accurate signal conditioning**. 
 
-### Header 3 
-Use this to have subsection if needed
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Analog to Digital Converter** 
+
+The amplified analog signals are fed into two NAU7802 24-bit ADCs. Each ADC supports two channels, enabling it to process signals from two load cells. The reasons for choosing the NAU7802 include:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; High-resolution **24-bit** conversion, critical for detecting small weight variations.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Better **accuracy** and **signal integrity** compared to the internal 12-bit ADCs in typical microcontrollers.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **I²C** communication, simplifying integration with the BLE controller module.
+
 
 
 ## Embedding images 
