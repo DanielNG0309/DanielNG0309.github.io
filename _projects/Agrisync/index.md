@@ -98,21 +98,29 @@ The system uses the **BL653u** module featuring the **Nordic nRF52833 SoC**, a *
 The controller handles all **BLE communication** with a **mobile application**, enabling **real-time** transmission of load cell data to the user interface. 
 
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***f. Power Supply***
+### ***f. Power Supply***
 
 
 A **dual-rail** power supply configuration powers the AgriSync system:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Primary Supply**: **12V DC** input derived from standard AC sources **(100–240V, 50/60 Hz)**, making it compatible with global power 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;standards, including **Canada’s 120V/60Hz** and **Brazil’s 127V** or **220V/60Hz**. This rail powers the **load cells** and **INA826** 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; standards, including **Canada’s 120V/60Hz** and **Brazil’s 127V** or **220V/60Hz**. This rail powers the **load cells** and **INA826** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instrumentation amplifiers.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; instrumentation amplifiers.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **3.3V Regulated Rail**: A **L78L33ABUTR** linear voltage regulator steps down **12V** to **3.3V** to power the controller and other low-voltage digital 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **3.3V Regulated Rail**: A **L78L33ABUTR** linear voltage regulator steps down **12V** to **3.3V** to power the controller and other low-voltage
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components. This rail powers the **BL653u** module and **NAU7802** ADCs.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; digital components. This rail powers the **BL653u** module and **NAU7802** ADCs.
 
+### ***g. 7-segment display***
+
+The system includes a **single-digit 7-segment display** used for scale identification and on-site debugging.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Scale Identification**: Displays the unique **scale number** to distinguish between multiple deployed systems.
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Debugging Aid**: Provided real-time feedback during development and testing, such as status codes and sensor activity indicators.
 
 ## Embedding images 
 ### External images
