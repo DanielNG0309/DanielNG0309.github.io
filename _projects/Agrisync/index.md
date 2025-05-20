@@ -55,6 +55,15 @@ With a **12V excitation**, the theoretical maximum output from each load cell is
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **c. In-Amp**
 
+An **INA826** instrumentation amplifier is used for each load cell to amplify the weak differential signal. With a **gain resistor** set to **250 Ω**, each amplifier achieves a gain of approximately **250x**, bringing the signal into a readable range for the ADC. Key reasons for this selection include:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; High **Common-Mode Rejection Ratio** (CMRR) – essential for eliminating noise such as the 6V common mode voltage present in the load cell outputs.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wide **supply voltage** range (>15V), compatible with the 12V rail used in the system.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Compact** and **cost-effective** solution with **high linearity** and **low offset**.
+
+Each load cell has a dedicated **INA826** amplifier to ensure **isolated** and **accurate signal conditioning**. 
 
 ### Header 3 
 Use this to have subsection if needed
