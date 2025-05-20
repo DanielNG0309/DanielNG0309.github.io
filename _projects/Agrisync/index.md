@@ -128,7 +128,7 @@ To implement the design the firmware was created with these key components:
 
 The **nrf52833** chip utilizes **Zephyr RTOS** as its main development tool. So, a **custom board file** was created for this implementation with both **I2C channels**, **custom pin mapping**, and **configuration settings** necessary for **BLE** enabled. **Drivers** for the **NAU7802** were created based on its datasheet for initial setup, data collection, and commands.
 
-```c++
+```c
  void i2c_setup(const struct i2c_dt_spec *dev_i2c){
 	 i2c_reg_write_byte_dt(dev_i2c,NAU7802_PU_CTRL,0x01);
 	 i2c_reg_write_byte_dt(dev_i2c,NAU7802_PU_CTRL,0x02);
