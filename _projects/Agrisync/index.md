@@ -20,7 +20,7 @@ Traditional farm inventory methods (e.g., livestock feed, crop bins) are manual 
 
 ## 2. Hardware Design
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;### a. PCB design
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. PCB design
 
 {% include image-gallery.html images="pcb schem.png" height="400" %} 
 
