@@ -122,6 +122,20 @@ The system includes a **single-digit 7-segment display** used for scale identifi
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Debugging Aid**: Provided real-time feedback during development and testing, such as status codes and sensor activity indicators.
 
+## 3. Firmware & Embedded Systems
+
+To implement the design the firmware was created with these key components:
+
+The **nrf52833** chip utilizes **Zephyr RTOS** as its main development tool. So, a **custom board file** was created for this implementation with both **I2C channels**, **custom pin mapping**, and **configuration settings** necessary for **BLE** enabled. **Drivers** for the **NAU7802** were created based on its datasheet for initial setup, data collection, and commands.
+
+A **GATT service** was set up to handle **BLE communication** between the **scale** and the **mobile app** with **2 characteristics**, one dedicated to weight change information and one for other communications needs (data integrity check, commands, etc,...). Connection and advertising parameters were set to a **minimum interval** of **50 ms** and a **maximum interval** of **100 ms**. **MTU** (Maximum Transmission Unit) was also set to the max of **247 bytes** instead of the default **23 bytes**. These changes ensure fast and seamless connection and data transfer between the scale and mobile app.
+
+A **state machine** configuration was used to gather the data from the 2 **ADCs** and 4 **load cells**. The **first state** is to **wait for the data to be ready** and read from load cells **1** and **3** (both connected to the internal MUX line 1 of each of the 2 ADCs). When both load cells **1** and **3** have been **read**, **MUX line 2** will be **selected**, and a predetermined **wait time** (400 ms) will be implemented for the **MUXs to settle**. Data will be then read from load cells **2** and **4** (both connected to MUX line 2) when it is **ready**. Once all **4 load cells are read**, the **sum** of them will be sent back to the main loop, **MUX line 1** will be selected, and the system will wait for another **400 ms**.
+
+To **smooth out the data**, multiple options were considered including **leaky integrator, moving average, and Kalman filter**. The **moving average** method was chosen at the end because of its **ease of implementation**, **decent performance**, and relatively **less resource-intensive** requirement. Raw data coming from the state machine was stored in a **cyclical buffer** continuously with **6 entries**. The **sum of the data** was then **averaged out**, giving a smooth and stable output. **Thresholds** in both **values** and **time** were also implemented to **ignore small and momentary changes** 
+
+
+
 ## Embedding images 
 ### External images
 {% include image-gallery.html images="https://live.staticflickr.com/65535/52821641477_d397e56bc4_k.jpg, https://live.staticflickr.com/65535/52822650673_f074b20d90_k.jpg" height="400"%}
