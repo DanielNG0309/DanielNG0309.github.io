@@ -14,9 +14,7 @@ skills:
 main-image: /ARBOx.jpg
 ---
 
-{% include youtube-video.html id="47oBgbT1ehI" autoplay= "false"%}
-
-<div style="width: 100%; max-width: 360px; margin: auto;">
+<div style="width: 100%; max-width: 360px; margin: auto; text-align: center;">
   <div style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
     <iframe 
       src="https://www.youtube.com/embed/47oBgbT1ehI" 
@@ -25,8 +23,10 @@ main-image: /ARBOx.jpg
       allowfullscreen>
     </iframe>
   </div>
+  <p style="margin-top: 0.5em; font-size: 0.95em; color: #555;">ARBox prototype</p>
 </div>
 
+---
 
 ## 1. System Architecture
 Depth Sensing: Selected and integrated the Arducam Time-of-Flight (ToF) depth camera, considering resolution, range, and Raspberry Pi compatibility.
@@ -34,6 +34,8 @@ Depth Sensing: Selected and integrated the Arducam Time-of-Flight (ToF) depth ca
 Processing Unit: Used a Raspberry Pi 4 for real-time image processing and hardware control.
 
 Projection: Configured the DLP LightCrafter Display 2000 EVM projector with RGB565 DPI output, calibrated to match the sandbox dimensions.
+
+---
 
 ## 2. Software & Image Processing
 
@@ -43,6 +45,8 @@ Implemented a full image pipeline: region-of-interest cropping, cubic interpolat
 
 Developed an auto-launch boot script for the Raspberry Pi to begin projection on power-up.
 
+---
+
 ## 3. Hardware Interface & Integration
 
 Designed the PCB schematic to streamline connections between the ToF camera, Raspberry Pi, and projector (routing handled by another teammate).
@@ -50,6 +54,8 @@ Designed the PCB schematic to streamline connections between the ToF camera, Ras
 Prototyped and tested all subsystems individually before full system integration.
 
 Calibrated the physical alignment of the camera and projector relative to the sandbox for accurate overlay.
+
+---
 
 ## 4. Prototyping & Enclosure
 
