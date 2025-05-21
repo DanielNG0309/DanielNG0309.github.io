@@ -14,6 +14,9 @@ skills:
 main-image: /ARBOx.jpg
 ---
 
+{% include youtube-video.html id="47oBgbT1ehI" autoplay= "false"%}
+
+
 ## 1. System Architecture
 Depth Sensing: Selected and integrated the Arducam Time-of-Flight (ToF) depth camera, considering resolution, range, and Raspberry Pi compatibility.
 
