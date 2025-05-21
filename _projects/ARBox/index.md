@@ -16,13 +16,15 @@ main-image: /ARBOx.jpg
 
 {% include youtube-video.html id="47oBgbT1ehI" autoplay= "false"%}
 
-<div style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
-  <iframe 
-    src="https://www.youtube.com/embed/47oBgbT1ehI" 
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-    frameborder="0" 
-    allowfullscreen>
-  </iframe>
+<div style="width: 100%; max-width: 360px; margin: auto;">
+  <div style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
+    <iframe 
+      src="https://www.youtube.com/embed/47oBgbT1ehI" 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
+  </div>
 </div>
 
 
