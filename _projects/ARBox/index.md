@@ -23,7 +23,7 @@ main-image: /ARBOx.jpg
       allowfullscreen>
     </iframe>
   </div>
-  <p style="margin-top: 0.5em; font-size: 0.95em; color: #555;">ARBox prototype</p>
+  <p style="margin-top: 0.5em; font-size: 0.95em; color: #555;">ARBox prototype (not final MVP)</p>
 </div>
 
 ---
