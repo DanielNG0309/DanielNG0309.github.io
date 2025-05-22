@@ -13,11 +13,14 @@ skills:
   - Power-aware hardware design
 
 main-image: /ltspice1_cover.png
+
 ---
 
 ## 1. Objective & Design Context
 
 {% include image-gallery.html images="power.png" height="400" %}
+
+{% include image-gallery.html images="projector.png" height="400" %} 
 
 This project aimed to build a bandpass amplifier with:
 
