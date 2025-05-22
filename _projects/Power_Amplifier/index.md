@@ -88,15 +88,15 @@ This project emphasized real-world constraints in power electronics design: **th
 
 The exemplary frequency response is shown above. It illustrates that OPA564 provides a flat gain beyond the frequencies of interest (within 20 Hz – 20 kHz) => a 3 dB drop in gain happens around **583 kHz** frequency.
 
-{% include image-gallery.html images="log_eff" height="400" %}
+{% include image-gallery.html images="log_eff.png" height="400" %}
 
 Output log for the **72%** efficiency case with design powered from +- 12 V.
 
-{% include image-gallery.html images="pow_eff" height="400" %}
+{% include image-gallery.html images="pow_eff.png" height="400" %}
 
 Power values for the **72%** efficiency case with design powered from +- 12 V.
 
-{% include image-gallery.html images="waveform_eff" height="400" %}
+{% include image-gallery.html images="waveform_eff.png" height="400" %}
 
 Simulation waveforms for **72%** efficiency case with design powered from +- 12 V
 
