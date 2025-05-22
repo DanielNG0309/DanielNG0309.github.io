@@ -29,7 +29,11 @@ main-image: /ARBOx.jpg
 ---
 
 ## 1. System Architecture
+
+{% include image-gallery.html images="ToF.png, projector.png" height="400" %} 
+
 Depth Sensing: Selected and integrated the Arducam Time-of-Flight (ToF) depth camera, considering resolution, range, and Raspberry Pi compatibility.
+
 
 Processing Unit: Used a Raspberry Pi 4 for real-time image processing and hardware control.
 
@@ -54,6 +58,21 @@ Designed the PCB schematic to streamline connections between the ToF camera, Ras
 Prototyped and tested all subsystems individually before full system integration.
 
 Calibrated the physical alignment of the camera and projector relative to the sandbox for accurate overlay.
+
+### Power Budget
+
+The projector module draws 609 mA max with an average of about 470
+mA.
+
+The camera module has a 700 mA maximum current drawn listed on its
+specification but on average draws about 500 mA in use
+
+The Raspberry Pi on average draws about 900 mA in use
+
+The total power budget is about 1.87 A * 5V = 9.35 W which is about ⅔ of what the
+power supply can provide, leaving some room for further expansions or changes in the future
+like adding an IR thermal camera
+
 
 ---
 
