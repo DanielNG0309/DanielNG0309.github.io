@@ -2,6 +2,7 @@
 layout: post
 title: Wideband Low-Noise Amplifier - LTSPICE Design Project
 description: A 3-stage bandpass amplifier design built for low noise, high fidelity, and wide bandwidth (20 Hz – 20 kHz). Designed and optimized in LTSPICE with detailed  physical performance validation against distortion, power, and gain criteria using breadboard prototype and bench tools.
+
 skills:
   - LTSPICE simulation
   - Analog circuit design
@@ -10,6 +11,7 @@ skills:
   - Oscilloscope-based validation
   - Signal fidelity & THD optimization
   - Power-aware hardware design
+
 main-image: /ltspice1_cover.png
 ---
 
