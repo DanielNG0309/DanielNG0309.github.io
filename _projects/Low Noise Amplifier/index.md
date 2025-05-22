@@ -66,7 +66,7 @@ Optional offset tuning via resistor biasing
 
 **HPF Output (Stage 1)** – Designed with Chebyshev characteristics to suppress low-frequency flicker noise.
 
-{% include image-gallery.html images="2nd stage.png" height="400" %}
+{% include image-gallery.html images="2nd_stage.png" height="400" %}
 
 **LPF Output (Stage 2)** – Butterworth filter ensures a flat response before gain stage.
 
