@@ -70,23 +70,23 @@ Optional offset tuning via resistor biasing
 
 **LPF Output (Stage 2)** – Butterworth filter ensures a flat response before gain stage.
 
-### **b. Full System Gain Response
+### **b. Full System Gain Response**
 
-{% include image-gallery.html images="100 gain.png" height="400" %} 
+{% include image-gallery.html images="100_gain.png" height="400" %} 
 
 **Gain = 100**, 10 mVpp input → 1 Vpp output
 
-{% include image-gallery.html images="500 gain.png" height="400" %}
+{% include image-gallery.html images="500_gain.png" height="400" %}
 
 **Gain = 500**, 2 mVpp input → 1 Vpp output
 
 ### **c. THD and Noise**
 
-{% include image-gallery.html images="100 output.png, 100 rms noise.png" height="400" %}
+{% include image-gallery.html images="100_output.png, 100_rms_noise.png" height="400" %}
 
 **THD** and **Noise RMS** at **100** Gain
 
-{% include image-gallery.html images="500 output.png, 500 rms noise.png" height="400" %}
+{% include image-gallery.html images="500_output.png, 500_rms_noise.png" height="400" %}
 
 **THD** and **Noise RMS** at **500** Gain
 
