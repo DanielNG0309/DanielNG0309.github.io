@@ -11,5 +11,6 @@ skills:
   - Op-Amp Selection & Power Budgeting
   - Multi-stage Amplifier Design
 
-main-image: /ltspice1_cover.jpg
+main-image: /ltspice1_cover.png
+
 ---
