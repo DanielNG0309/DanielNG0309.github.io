@@ -14,6 +14,9 @@ main-image: /ltspice1_cover.png
 ---
 
 ## 1. Objective & Design Context
+
+{% include image-gallery.html images="power.png" height="400" %}
+
 This project aimed to build a bandpass amplifier with:
 
 Bandwidth: 20 Hz – 20 kHz
