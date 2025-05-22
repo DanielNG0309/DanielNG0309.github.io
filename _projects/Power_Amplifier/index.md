@@ -24,7 +24,7 @@ The goal of this project was to design a power amplifier capable of delivering u
 
 The amplifier circuit was designed in LTSpice using a custom OPA564 symbol to simulate all relevant behaviors, including **current limit** and **enable/disable** features.
 
-{% include image-gallery.html images="power_schem.webp" height="400" %}
+{% include image-gallery.html images="power_schem.webp, schem.png" height="400" %}
 
 - Supply: ±12V
 - Load: 8Ω speaker
@@ -33,7 +33,7 @@ The amplifier circuit was designed in LTSpice using a custom OPA564 symbol to si
 
 ### **b. Power & Efficiency Analysis**
 
-{% include image-gallery.html images="opa_power_output.png, opa_efficiency_avg.png" height="400" %}
+{% include image-gallery.html images="diss_pow.png, avg_pow.png" height="400" %}
 
 - **Delivered power** to load: 8.25W avg  
 - **Supply power draw**: 11.86W  
@@ -41,9 +41,10 @@ The amplifier circuit was designed in LTSpice using a custom OPA564 symbol to si
 
 The amplifier achieved **71–72%** efficiency at peak operation and maintained decent performance across lower gains by adjusting supply voltage.
 
+
 ### **c. THD Performance**
 
-{% include image-gallery.html images="opa_thd_log.png" height="400" %}
+{% include image-gallery.html images="thd_log.png" height="400" %}
 
 - THD < 1% at full swing  
 - Simulation confirmed stable, clean output under max power condition
@@ -55,14 +56,28 @@ The amplifier achieved **71–72%** efficiency at peak operation and maintained 
 - Thermal performance validated with **heat sink selection** via datasheet calculations
 - Simulations showed efficient behavior across multiple voltage/gain settings
 
-## 4. Thermal & Hardware Considerations
+## 4. PCB design
 
-- Used **power pad** package with low thermal resistance
-- Included thermal vias and isolated anodized heatsink in layout
-- Verified against maximum PCB area constraints (16cm²)
+{% include image-gallery.html images="power_routing.png" height="400" %}
 
-{% include image-gallery.html images="opa_thermal_notes.png" height="400" %}
 
-## 5. Reflection
+Carefully routed two-layer board with:
+
+Wide power planes for current handling
+
+Thermal pad under IC with copper pour and vias for heat dissipation
+
+Compact through-hole terminal blocks for input/output/power
+
+Silkscreen, layer stack, and trace widths were reviewed for manufacturability and performance.
+
+## 5. Thermal & Hardware Considerations
+
+Calculated thermal resistance to be around 13 C/W
+Used **power pad** package with low thermal resistance
+Included thermal vias and isolated anodized heatsink in layout
+Verified against maximum PCB area constraints (16cm²)
+
+## 6. Reflection
 
 This project emphasized real-world constraints in power electronics design: **thermal management**, **efficiency tuning**, and **signal quality** under load. It balanced simulation with practical hardware considerations and validated all performance targets before PCB implementation.
