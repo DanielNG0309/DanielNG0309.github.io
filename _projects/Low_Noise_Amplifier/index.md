@@ -17,10 +17,6 @@ main-image: /ltspice1_cover.png
 
 ## 1. Objective & Design Context
 
-{% include image-gallery.html images="power.png" height="400" %}
-
-{% include image-gallery.html images="projector.png" height="400" %} 
-
 This project aimed to build a bandpass amplifier with:
 
 Bandwidth: 20 Hz – 20 kHz
@@ -33,6 +29,8 @@ Power < 15 mW
 
 We used LTspice for schematic design, simulation, and optimization. Once the design met performance targets, it was prototyped on a breadboard and tested with an oscilloscope and signal generator to verify frequency response, gain linearity, and signal distortion in real hardware.
 
+---
+
 ## 2. Circuit Design Overview
 The amplifier consists of three stages:
 
@@ -43,6 +41,8 @@ The amplifier consists of three stages:
 Inverting Amplifier with variable gain
 
 This configuration ensures a smooth passband, low noise, and adjustable gain across a wide frequency spectrum.
+
+---
 
 ## 3. Key Components & Design
 ### **a. High-Pass Filter Stage**
@@ -65,6 +65,8 @@ Adjustable gain via potentiometer
 Final gain range from 1x–5x
 
 Optional offset tuning via resistor biasing
+
+---
 
 ## 4. LTSPICE Simulation & Optimization
 ### **a. Frequency Response**
@@ -103,6 +105,8 @@ Optional offset tuning via resistor biasing
 
 Average power per amplifier is about 2.5 mW, so it makes 2.5*3 = **7.5 mW** of dissipated power for the whole design.
 
+---
+
 ## 5. Breadboard Prototyping & Testing
 ### **a. Physical Build**
 Assembled full 3-stage design on breadboard
@@ -126,6 +130,8 @@ Amplifier output remained linear under all tested gain settings
 No oscillation or unexpected peaking observed
 
 Minor component value tweaks were applied post-testing for optimal flatness
+
+---
 
 ## 6. Reflection
 This project reinforced the full cycle of design → simulate → prototype → validate, requiring both theoretical design via LTspice and practical skills in breadboarding, measurement, and debugging. It was a great demonstration of analog system integration and performance tuning.
