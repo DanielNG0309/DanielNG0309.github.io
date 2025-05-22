@@ -53,23 +53,25 @@ Developed an auto-launch boot script for the Raspberry Pi to begin projection on
 
 ## 3. Hardware Interface & Integration
 
+{% include image-gallery.html images="pcb.png" height="400" %} 
+
 Designed the PCB schematic to streamline connections between the ToF camera, Raspberry Pi, and projector (routing handled by another teammate).
 
 Prototyped and tested all subsystems individually before full system integration.
 
 Calibrated the physical alignment of the camera and projector relative to the sandbox for accurate overlay.
 
-### Power Budget
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Power Budget**
 
-The projector module draws 609 mA max with an average of about 470
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The projector module draws 609 mA max with an average of about 470
 mA.
 
-The camera module has a 700 mA maximum current drawn listed on its
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The camera module has a 700 mA maximum current drawn listed on its
 specification but on average draws about 500 mA in use
 
-The Raspberry Pi on average draws about 900 mA in use
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Raspberry Pi on average draws about 900 mA in use
 
-The total power budget is about 1.87 A * 5V = 9.35 W which is about ⅔ of what the
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The total power budget is about 1.87 A * 5V = 9.35 W which is about ⅔ of what the
 power supply can provide, leaving some room for further expansions or changes in the future
 like adding an IR thermal camera
 
@@ -77,6 +79,8 @@ like adding an IR thermal camera
 ---
 
 ## 4. Prototyping & Enclosure
+
+{% include image-gallery.html images="3d.png, frame.png" height="400" %} 
 
 Built a wooden sandbox frame to match the projection’s 4:3 aspect ratio and height constraints of the depth sensor and projector.
 
