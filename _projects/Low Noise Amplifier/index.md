@@ -62,7 +62,7 @@ Optional offset tuning via resistor biasing
 ## 4. LTSPICE Simulation & Optimization
 ### **a. Frequency Response**
 
-{% include image-gallery.html images="stage1.png" height="400" %} 
+{% include image-gallery.html images="stage.png" height="400" %} 
 
 **HPF Output (Stage 1)** – Designed with Chebyshev characteristics to suppress low-frequency flicker noise.
 
