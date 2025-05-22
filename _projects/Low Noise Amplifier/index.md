@@ -65,37 +65,32 @@ Optional offset tuning via resistor biasing
 ## 4. LTSPICE Simulation & Optimization
 ### **a. Frequency Response**
 
-{% include image-gallery.html images="1st stage.png" height="400" %} 
+{% include image-gallery.html images="stage1.png" height="400" %} 
 
 **HPF Output (Stage 1)** – Designed with Chebyshev characteristics to suppress low-frequency flicker noise.
 
-{% include image-gallery.html images="2nd stage.png" height="400" %}
+
 
 **LPF Output (Stage 2)** – Butterworth filter ensures a flat response before gain stage.
 
 ### **b. Full System Gain Response**
 
-{% include image-gallery.html images="100 gain.png" height="400" %} 
 
 **Gain = 100**, 10 mVpp input → 1 Vpp output
 
-{% include image-gallery.html images="500 gain.png" height="400" %}
 
 **Gain = 500**, 2 mVpp input → 1 Vpp output
 
 ### **c. THD and Noise**
 
-{% include image-gallery.html images="100 output.png, 100 rms noise.png" height="400" %}
 
 **THD** and **Noise RMS** at **100** Gain
 
-{% include image-gallery.html images="500 output.png, 500 rms noise.png" height="400" %}
 
 **THD** and **Noise RMS** at **500** Gain
 
 ### **d. Power Consumption**
 
-{% include image-gallery.html images="power.png" height="400" %}
 
 Average power per amplifier is about 2.5 mW, so it makes 2.5*3 = **7.5 mW** of dissipated power for the whole design.
 
